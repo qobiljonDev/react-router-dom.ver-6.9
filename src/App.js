@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {
+  createContext,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
+import { Button } from "./components";
 
-function App() {
+import "./app.css";
+
+export const Context = createContext();
+
+const App = ({ name, fullName }) => {
+  const [state, setState] = useState(0);
+  const ref = useRef();
+
+  const handleClick = (num) => {
+    setState((prev) => prev + num);
+    // state = state + num;
+    ref.current.style.color = "red";
+  };
+
+  useEffect(() => {
+    return () => {};
+  }, []);
+
+  useLayoutEffect(() => {}, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Context.Provider value={{name, fullName}} >
+        <p ref={ref}>{state}</p>
+        <p>{name}</p>
+        <br />
+        <Button ref={ref} onClick={() => handleClick(1)} className="salom">
+          Increment
+        </Button>
+        <hr />
+        <Button onClick={() => handleClick(-1)} className="salom">
+          Decrement
+        </Button>
+      </Context.Provider>
     </div>
   );
-}
+};
 
 export default App;

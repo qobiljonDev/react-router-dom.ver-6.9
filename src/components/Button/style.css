@@ -1,0 +1,13 @@
+.btn {
+  border: none;
+  outline: none;
+  background: red;
+  min-width: 200px;
+  height: 60px;
+  text-align: center;
+  color: white;
+
+  cursor: pointer;
+    display: inline;
+  user-select: none;
+}
