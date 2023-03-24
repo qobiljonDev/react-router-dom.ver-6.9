@@ -1,0 +1,12 @@
+.home-page {
+  max-width: 1024px;
+  margin: auto;
+}
+.home-page nav {
+  padding: 20px;
+  background: gray;
+}
+.home-page nav a {
+  font: 500 26px/37px Arial;
+  margin-right: 20px;
+}/*# sourceMappingURL=style.css.map */

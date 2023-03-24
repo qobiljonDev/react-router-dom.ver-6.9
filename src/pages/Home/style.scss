@@ -1,0 +1,19 @@
+.home-page {
+  max-width: 1024px;
+  margin: auto;
+
+  nav {
+    padding: 20px;
+    background: gray;
+
+    a {
+      font: 500 26px/37px Arial;
+      margin-right: 20px;
+      color: #fff;
+      transition: color 0.3s ease;
+      &.active {
+        color: #000;
+      }
+    }
+  }
+}
